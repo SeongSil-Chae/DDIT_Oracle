@@ -1,0 +1,40 @@
+2024-1010-02)숫자자료형
+   - NUMBER, INTEGER, DECIMAL, BINARY_FLOAT, BINARY_DOUBLE  등등이 제공되나 내부적으로는
+     NUMBER로 변형되어 저장
+     
+사용형식)
+  NUMBER[(*\P [,S])]
+  · P는 전체 자리수 (1~38)
+  · S는 소숫점 이하의 자리수(-84 ~ 127, dafault는 0)
+  
+사용예)
+  CREATE TABLE TEST02(
+    COL1 NUMBER,
+    COL2 NUMBER(3),
+    COL3 NUMBER(3,2),
+    COL4 NUMBER(5,2),
+    COL5 NUMBER(7,1),
+    COL6 NUMBER(7,-1),
+    COL7 NUMBER(7,-2),
+    COL8 NUMBER(*,2),
+    COL9 NUMBER(4,5),
+    COL10 NUMBER(4,7),
+    COL11 NUMBER(3,4),
+    COL12 NUMBER(4,6));
+     
+  INSERT INTO TEST02 VALUES(456.73, 456.73, 0.73, 456.73, 456.77, 50456.73, 
+  12456.73, 12456.7393, 0.01234, 0.0001234, 0.0012, 0.00123789);
+  
+  INSERT INTO TEST02 VALUES(456.73, 456.73, 0.73, 456.73, 456.77, 50456.73, 
+  12456.73, 12456.7393, 0.01234, 0.0001234, 0.0812, 0.00123789);
+     
+     
+   SELECT * FROM TEST02;  
+   
+   
+   CREATE TABLE TEST03(
+    COL1 INTEGER,
+    COL2 DECIMAL,
+    COL3 BINARY_FLOAT,
+    COL4 BINARY_DOUBLE);
+    --숫자 크기를 알아보기 위해 해봄. NUMBER를 사용하면됨 웬만하면.
