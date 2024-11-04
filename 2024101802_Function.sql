@@ -11,7 +11,7 @@
            CONCAT(MEM_REGNO1,'-',MEM_REGNO2) AS ÁÖ¹Î¹øÈ£,
            MEM_REGNO1||'-'||MEM_REGNO2 AS ÁÖ¹Î¹øÈ£2
         FROM CSS02.MEMBER
-        WHERE SUBSTR(MEM_REGNO2,1,1) IN ('2','4')
+        WHERE SUBSTR(MEM_REGNO2,-11,1) IN ('2','4')
         
     2. LOWER, UPPER    
     

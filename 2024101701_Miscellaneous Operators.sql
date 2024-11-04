@@ -153,6 +153,8 @@
                                    GROUP BY DEPARTMENT_ID
                                    HAVING COUNT(*)>=10) A)
                                    
+
+                                   
                                    
  4. ANY(SOME)
 사용형식)

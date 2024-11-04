@@ -1,0 +1,19 @@
+2024-1031-02) 동의어(SYSNONYM)
+ - 객체의 이름에 또 하나의 이름을 부여
+ - 객체를 사용할 수 있는 곳에서는 언제나 사용가능(컬럼별칭, 테이블 별칭과의 차이점)
+ - 컬럼은 안되고 객체만 가능. (테이블 같은)
+ 
+사용예) 
+    CREATE OR REPLACE SYNONYM DEPT FOR HR.DEPARTMENTS;
+    
+    SELECT * FROM HR.DEPARTMENTS;
+    SELECT * FROM DEPT;
+    
+    SELECT  A.EMPLOYEE_ID, A.EMP_NAME, B.DEPARTMENT_NAME
+      FROM HR.EMPLOYEES A, DEPT B
+     WHERE A.DEPARTMENT_ID = B.DEPARTMENT_ID
+     ORDER BY 1
+     
+     CREATE OR REPLACE SYNONYM MYDUAL FOR SYS.DUAL;
+     
+     SELECT SYSDATE FROM MYDUAL;

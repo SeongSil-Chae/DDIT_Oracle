@@ -118,7 +118,7 @@ SELECT * FROM GOODS;
   202410140003         1101             P101             10
   ------------------------------------------------------------ 
   
- INSERT INTO CUSTOMERS(CUST_ID) VALUES(1102);
+ INSERT INTO  VALUES(1102);
   INSERT INTO CUSTOMERS(CUST_ID) VALUES(1104);
    INSERT INTO CUSTOMERS(CUST_ID) VALUES(1112);
  
