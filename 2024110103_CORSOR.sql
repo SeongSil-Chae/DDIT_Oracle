@@ -133,7 +133,7 @@
     END LOOP;
   END;
   
-  
+  (인라인 FOR LOOP 문)
   DECLARE
     L_AMT NUMBER:=0;
   BEGIN

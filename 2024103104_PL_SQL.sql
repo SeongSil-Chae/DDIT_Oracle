@@ -19,13 +19,9 @@ END;
 사용예) 키보드로 부서코드를 입력 받아 해당부서에서 가장 먼저 입사한 사원의 
         사원번호, 사원명, 입사일, 급여를 출력하는 익명블록을 작성하시오.
 
-        
-
-
- 
    ACCEPT P_DEPT_ID PROMPT '부서코드 입력(10~110) : '
   DECLARE
-    L_EMP_ID HR1.EMPLOYEES.EMPLOYEE_ID%TYPE;
+    L_EMP_ID HR.EMPLOYEES.EMPLOYEE_ID%TYPE;
     -- 참조형 타입 :%TYPE =  데이터 타입이 상관없이 변경하여 사용 함. 행과 같은 타입으로 변경
     L_EMP_NAME VARCHAR2(60);
     L_HDATE DATE;
@@ -35,7 +31,7 @@ END;
     SELECT EMPLOYEE_ID,EMP_NAME,HIRE_DATE,SALARY
       INTO L_EMP_ID,L_EMP_NAME,L_HDATE,L_SALARY
       FROM (SELECT EMPLOYEE_ID,EMP_NAME,HIRE_DATE,SALARY
-              FROM HR1.EMPLOYEES
+              FROM HR.EMPLOYEES
              WHERE DEPARTMENT_ID=&P_DEPT_ID    -- & = 참조하라
              ORDER BY HIRE_DATE)
      WHERE ROWNUM=1;
